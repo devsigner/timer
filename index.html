@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Stantup timer</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/solid.min.css');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.css');
+
+      * { box-sizing: border-box; }
+      :focus { outline: none; }
+      body { margin: 0; }
+
+      #timeCard-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+
+        font-family: sans-serif;
+        font-size: 1em;
+        color: #222;
+
+        background: #4D1FA1;
+      }
+
+      #timeCard {
+        width: 90%;
+        padding: 15px 15px 30px 15px;
+        text-align: center;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+      }
+
+      h1 { margin: 0; }
+
+      h1 { font-size: 5em; }
+      h5 { font-size: 1em; margin: 15px 0; }
+
+      button {
+        margin: 0 5px;
+
+        border: none;
+        border-radius: 50px;
+
+        color: white;
+        text-align: center;
+
+        cursor: pointer;
+        transition: color 0.3s, background-color 0.3s;
+      }
+
+      .bg-green  { background: #1FA160 !important; }
+      .bg-grey   { background: #727F7F !important; }
+      .bg-orange { background: #DC951C !important; }
+      .bg-red    { background: #A11F4B !important; }
+
+      .green  { color: #1FA160 !important; }
+      .grey   { color: #727F7F !important; }
+      .orange { color: #DC951C !important; }
+      .red    { color: #A11F4B !important; }
+
+      .startButton { background-color: #178C60 !important; }
+      .startButton:hover { background-color: #126D4C !important; }
+
+      .stopButton { background-color: #EF1932 !important; }
+      .stopButton:hover { background-color: #BB1428 !important; }
+
+      .resetButton { background-color: #707070 !important; }
+      .resetButton:hover { background-color: #545454 !important; }
+
+      label { display: flex; margin: 5px 0; }
+      label span,
+      input[type="text"] {
+        width: 100%;
+        margin-bottom: 30px;
+
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid #222;
+      }
+      input[type="text"]:focus {
+        background-color: #F4F4F4;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15) inset;
+      }
+
+      .progressbar-wrapper {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      progress {
+        /* Reset the default appearance */
+        -webkit-appearance: none;
+        appearance: none;
+
+        height: 25px;
+        width: 100%;
+        text-align: left;
+
+        border-radius: 2px;
+      }
+      progress[value]::-webkit-progress-bar {
+        padding: 4px;
+        border-radius: 2px;
+        color: #DEDEDE !important;
+        background-color: rgba(0, 0, 0, 0.05);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25) inset;
+      }
+      progress::-webkit-progress-value {
+        transition: 0.5s width;
+      }
+
+      /* Responsive */
+
+      h1 { font-size: 4em; }
+      h5 { font-size: 1em; margin: 15px 0; }
+
+      label span,
+      input[type="text"] {
+        padding: 5px 10px;
+        font-size: 1.2em;
+      }
+
+      button {
+        width:       70px;
+        height:      70px;
+        line-height: 67px;
+        font-size: 1.4em;
+      }
+
+      @media (min-width:640px) {
+        #timeCard { width: 50%; }
+
+        h1 { font-size: 5em; }
+
+        label span,
+        input[type="text"] {
+          padding: 15px 20px;
+          font-size: 1.9em;
+        }
+      }
+
+      @media (min-width:900px) {
+        h1 { font-size: 7em; }
+        h5 { font-size: 1.6em; }
+        #timeCard { width: 35%; }
+        button {
+          width:       80px;
+          height:      80px;
+          line-height: 77px;
+          font-size: 1.9em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app"></main>
+
+    <script src="/app-bundle.js" ></script>
+  </body>
+</html>
