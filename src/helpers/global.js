@@ -10,9 +10,10 @@ function formatTimer(time) {
   return minutes + ':' + seconds;
 }
 
-function timeToSeconds(time) {
-  const minutes = parseInt(time[1], 10);
-  const seconds = time[2] ? parseInt(time[2], 10) : 0;
+function timeToSeconds(strSeconds) {
+  const found = strSeconds.match(/([0-9]+):?([0-9]*)/)
+  const minutes = parseInt(found[1], 10);
+  const seconds = found[2] ? parseInt(found[2], 10) : 0;
 
   return minutes * 60 + seconds;
 }

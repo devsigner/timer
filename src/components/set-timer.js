@@ -5,11 +5,10 @@ class SetTimer extends React.Component {
   onChange(event) {
     event.preventDefault();
 
-    const strSeconds = this.refs.seconds.value;
-    const time = strSeconds.match(/([0-9]+):?([0-9]*)/)
+    const values = this.refs.seconds.value;
 
-    if(time) {
-      this.props.onSetTimer(timeToSeconds(time));
+    if(values != "") {
+      this.props.onSetTimer(timeToSeconds(values));
     }
   }
 

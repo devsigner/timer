@@ -12,6 +12,11 @@ function Title({value}) {
   return <h5>{value}</h5>
 }
 
+const RUNNING = 'running';
+const PAUSE = 'pause';
+const STOPPED = 'stopped';
+const READY = 'ready';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,11 +36,6 @@ class App extends React.Component {
       }
     }
   }
-
-  const RUNNING = 'running';
-  const PAUSE = 'pause';
-  const STOPPED = 'stopped';
-  const READY = 'ready';
 
   get status() {
     let s = this.state;
