@@ -12,6 +12,8 @@ function formatTimer(time) {
 
 function timeToSeconds(strSeconds) {
   const found = strSeconds.match(/([0-9]+):?([0-9]*)/)
+  if (found == null) return 0;
+
   const minutes = parseInt(found[1], 10);
   const seconds = found[2] ? parseInt(found[2], 10) : 0;
 

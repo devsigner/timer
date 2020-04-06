@@ -13,7 +13,15 @@ describe('formatTimer', () => {
 })
 
 describe('timeToSeconds', () => {
-  it('returns time in seconds as integer', () => {
+  it('returns time in seconds as number', () => {
     expect(timeToSeconds("03:10")).toBe(190)
+  })
+
+  it('returns 0 when value is an empty string', () => {
+    expect(timeToSeconds("")).toBe(0)
+  })
+
+  it('returns 0 when value is an erroneous string', () => {
+    expect(timeToSeconds("a")).toBe(0)
   })
 })
